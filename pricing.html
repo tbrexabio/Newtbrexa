@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>tBrexa Pricing</title>
+<style>
+  :root{--secondary:#DC4C18;--accent:#10B981;--blue:#0844A4;--text:#0f172a;--muted:#475569;--bg:#ffffff;--bg-soft:#f8fafc}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+  .container{max-width:1120px;margin:0 auto;padding:0 20px}
+  h1{font-size:clamp(32px,4.5vw,48px);margin:0 0 8px}
+  h2{font-size:clamp(22px,2.4vw,28px);margin:0 0 10px}
+  p{color:var(--muted)}
+  .section{padding:72px 0}
+  .cards{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:900px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .price{font-size:36px;font-weight:800;margin:10px 0;color:var(--text)}
+  .btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:12px 18px;font-weight:600}
+  .btn--solid{color:#fff;background:linear-gradient(90deg,var(--accent),var(--secondary))}
+  ul{margin:10px 0 0 18px;color:var(--muted)}
+  li{margin:6px 0}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,#0844A41A,#DC4C181A);font-size:12px;margin-bottom:8px}
+  nav a{margin-left:18px}
+</style>
+</head>
+<body>
+<div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="tbrexa_logo.png" alt="tBrexa Bio logo" style="height:36px;width:auto;object-fit:contain;display:block" />
+    <strong style="margin-left:6px;">tBrexa Bio</strong>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="mailto:info@tbrexa.com">Contact</a>
+  </nav>
+</div>
+
+<section class="section" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="badge">Transparent pricing to fit your stage</div>
+    <h1>Pricing</h1>
+    <p>Pick a plan that matches your program scale. All plans include compliance ready documentation and access to our growing library of data models and connectors.</p>
+    <div class="cards" style="margin-top:18px;">
+      <div class="card">
+        <h2>Starter</h2>
+        <div class="price">$5,000 setup + $1,500 per month</div>
+        <ul>
+          <li>Two instrument parsers and one ELN or LIMS integration</li>
+          <li>QC dashboard and batch genealogy app</li>
+          <li>Email support response within two business days</li>
+          <li>Basic validation pack IQ and OQ</li>
+        </ul>
+        <p><a class="btn btn--solid" href="mailto:info@tbrexa.com">Choose Starter</a></p>
+      </div>
+      <div class="card" style="border-color:var(--secondary);box-shadow:0 6px 24px rgba(220,76,24,.15)">
+        <h2>Growth</h2>
+        <div class="price">$15,000 setup + $4,000 per month</div>
+        <ul>
+          <li>Up to six instrument parsers and two ELN or LIMS integrations</li>
+          <li>QC dashboard batch genealogy and DoE explorer</li>
+          <li>SLA backed support next business day</li>
+          <li>Full validation pack IQ OQ and PQ</li>
+          <li>One AI model deploy predictive yield or anomaly detection</li>
+        </ul>
+        <p><a class="btn btn--solid" href="mailto:info@tbrexa.com">Choose Growth</a></p>
+      </div>
+      <div class="card">
+        <h2>Enterprise</h2>
+        <div class="price">Custom quote</div>
+        <ul>
+          <li>Multi site SSO tenant isolation and advanced RBAC</li>
+          <li>Unlimited parsers with prioritized roadmap</li>
+          <li>Dedicated success engineer and quarterly roadmapping</li>
+          <li>GxP change control and inspection readiness support</li>
+          <li>Model governance drift monitoring and retraining</li>
+        </ul>
+        <p><a class="btn btn--solid" href="mailto:info@tbrexa.com">Contact Sales</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
