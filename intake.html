@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>tBrexa Bio | Project Intake Form</title>
+<style>
+  :root{
+    --blue:#0844A4; --orange:#DC4C18; --green:#10B981; --text:#0f172a; --muted:#475569; --bg:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+  .container{max-width:960px;margin:0 auto;padding:20px}
+  h1{margin:8px 0 4px;font-size:clamp(28px,4vw,40px);color:var(--blue)}
+  p{color:var(--muted)}
+  .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--green);font-size:12px;margin-bottom:8px}
+  .form-grid{display:grid;gap:14px}
+  .two{grid-template-columns:1fr 1fr}
+  .three{grid-template-columns:1fr 1fr 1fr}
+  .field{display:flex;flex-direction:column;gap:6px}
+  label{font-weight:600}
+  input,select,textarea{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px}
+  fieldset{border:1px solid #e5e7eb;border-radius:12px;padding:14px 14px 10px;margin:14px 0}
+  legend{font-weight:700;color:var(--blue)}
+  .pill-group{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{position:relative;display:inline-flex;align-items:center}
+  .pill input{position:absolute;opacity:0;pointer-events:none}
+  .pill span{display:inline-block;padding:8px 12px;border:1.5px solid #e5e7eb;border-radius:999px;font-size:13px;color:#0f172a;background:#fff}
+  .pill input:checked+span{border-color:transparent;background:linear-gradient(90deg,var(--blue),var(--orange),var(--green));color:#fff}
+  .btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:12px 18px;font-weight:600;color:#fff;background:linear-gradient(90deg,var(--blue),var(--orange),var(--green));border:none}
+  .note{font-size:12px;color:#6b7280}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="eyebrow">tBrexa Bio</div>
+    <h1>Project Intake Form</h1>
+    <p>Complete this guided intake so our Business Development team can reach out with the right experts. We focus on <strong>non‑GMP R&D</strong> today and coordinate GMP via partners when needed.</p>
+
+    <form class="card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data" id="intakeForm">
+
+      <!-- Section 1: Company Information -->
+      <fieldset>
+        <legend>Section 1: Company Information</legend>
+        <div class="form-grid two">
+          <div class="field"><label>Company Name*<input name="company_name" required></label></div>
+          <div class="field"><label>Company Website<input name="company_website" placeholder="https://"></label></div>
+          <div class="field"><label>Point of Contact Name*<input name="poc_name" required></label></div>
+          <div class="field"><label>Title / Role<input name="poc_title"></label></div>
+          <div class="field"><label>Email Address*<input type="email" name="email" required></label></div>
+          <div class="field"><label>Phone Number<input type="tel" name="phone"></label></div>
+          <div class="field"><label>Preferred Contact<select name="contact_pref"><option>Email</option><option>Phone</option><option>Video Call</option><option>In‑person</option></select></label></div>
+          <div class="field"><label>Company Address<textarea name="company_address" rows="2" placeholder="Street, City, State/Province, Zip, Country"></textarea></label></div>
+        </div>
+      </fieldset>
+
+      <!-- Section 2: Project Overview -->
+      <fieldset>
+        <legend>Section 2: Project Overview</legend>
+        <div class="form-grid two">
+          <div class="field"><label>Project Name / Code<input name="project_code"></label></div>
+          <div class="field"><label>Stage of Development<select name="stage"><option>Discovery</option><option>Pre‑clinical</option><option>IND‑enabling</option><option>Phase I (via partner for GMP)</option><option>Phase II (via partner for GMP)</option><option>Phase III (via partner for GMP)</option><option>Commercial (via partner for GMP)</option><option>Other (specify below)</option></select></label></div>
+        </div>
+        <div class="field"><label>Type of Request (select all that apply)</label>
+          <div class="pill-group">
+            <label class="pill"><input type="checkbox" name="request_type[]" value="Process Development"><span>Process Development</span></label>
+            <label class="pill"><input type="checkbox" name="request_type[]" value="Cell Line Optimization"><span>Cell Line Optimization</span></label>
+            <label class="pill"><input type="checkbox" name="request_type[]" value="Analytical Method Development"><span>Analytical Method Development</span></label>
+            <label class="pill"><input type="checkbox" name="request_type[]" value="Tech Transfer Prep"><span>Tech Transfer Prep</span></label>
+            <label class="pill"><input type="checkbox" name="request_type[]" value="Data/AI & Process Analytics"><span>Data/AI & Process Analytics</span></label>
+            <label class="pill"><input type="checkbox" name="request_type[]" value="Regulatory Consulting (IRSG)"><span>Regulatory Consulting (IRSG)</span></label>
+            <label class="pill"><input type="checkbox" name="request_type[]" value="Clinical/Commercial Manufacturing (Partnered)"><span>Clinical/Commercial Manufacturing (Partnered)</span></label>
+            <label class="pill"><input type="checkbox" id="req_other_chk" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="field" id="req_other_wrap" style="display:none"><label>Other (please specify)<input name="request_other"></label></div>
+        <div class="field"><label>Brief Description of the Project<textarea name="project_desc" rows="4" placeholder="Key objectives, challenges, success criteria"></textarea></label></div>
+      </fieldset>
+
+      <!-- Section 3: Technical Details -->
+      <fieldset>
+        <legend>Section 3: Technical Details</legend>
+        <div class="field"><label>Molecule Type (select all that apply)</label>
+          <div class="pill-group">
+            <label class="pill"><input type="checkbox" name="molecule[]" value="mAb"><span>Monoclonal Antibody (mAb)</span></label>
+            <label class="pill"><input type="checkbox" name="molecule[]" value="bsAb"><span>Bispecific Antibody (bsAb)</span></label>
+            <label class="pill"><input type="checkbox" name="molecule[]" value="tsAb"><span>Trispecific Antibody (tsAb)</span></label>
+            <label class="pill"><input type="checkbox" name="molecule[]" value="Recombinant Protein"><span>Recombinant Protein</span></label>
+            <label class="pill"><input type="checkbox" name="molecule[]" value="AAV"><span>Viral Vector (AAV)</span></label>
+            <label class="pill"><input type="checkbox" name="molecule[]" value="Lenti"><span>Viral Vector (Lenti)</span></label>
+            <label class="pill"><input type="checkbox" name="molecule[]" value="Cell Therapy (ex vivo)"><span>Cell Therapy (ex vivo)</span></label>
+            <label class="pill"><input type="checkbox" id="mol_other_chk" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="field" id="mol_other_wrap" style="display:none"><label>Other Molecule Type<input name="molecule_other"></label></div>
+
+        <div class="form-grid two">
+          <div class="field"><label>Therapeutic Area<select name="therapy_area"><option>Oncology</option><option>Immunology</option><option>Rare Disease</option><option>Infectious Disease</option><option>Cardio‑Metabolic</option><option>Neurology</option><option>Other (specify below)</option></select></label></div>
+          <div class="field"><label>Therapeutic Area — Other<input name="therapy_area_other" placeholder="If other"></label></div>
+        </div>
+
+        <div class="form-grid two">
+          <div class="field"><label>Quantity / Scale Needed<input name="quantity" placeholder="e.g., mg for research, lots for tox, etc."></label></div>
+          <div class="field"><label>Formulation Needs<input name="formulation_needs" placeholder="e.g., injectable, buffer preferences"></label></div>
+        </div>
+        <div class="field"><label>Known Stability / Solubility / Handling Requirements<textarea name="handling" rows="3"></textarea></label></div>
+        <div class="field"><label>Special Storage / Biosafety (e.g., cold chain, BSL, controlled substances)<textarea name="storage" rows="2"></textarea></label></div>
+        <div class="form-grid two">
+          <div class="field"><label>Target Product Profile (upload)<input type="file" name="tpp_file"></label></div>
+          <div class="field"><label>Process Description / Data (upload)<input type="file" name="process_file"></label></div>
+        </div>
+      </fieldset>
+
+      <!-- Section 4: Regulatory & Quality -->
+      <fieldset>
+        <legend>Section 4: Regulatory & Quality</legend>
+        <div class="field"><label>Intended Regulatory Market(s)</label>
+          <div class="pill-group">
+            <label class="pill"><input type="checkbox" name="market[]" value="FDA"><span>FDA (U.S.)</span></label>
+            <label class="pill"><input type="checkbox" name="market[]" value="EMA"><span>EMA (Europe)</span></label>
+            <label class="pill"><input type="checkbox" name="market[]" value="MHRA"><span>MHRA (UK)</span></label>
+            <label class="pill"><input type="checkbox" name="market[]" value="PMDA"><span>PMDA (Japan)</span></label>
+            <label class="pill"><input type="checkbox" name="market[]" value="Health Canada"><span>Health Canada</span></label>
+            <label class="pill"><input type="checkbox" id="mkt_other_chk" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="field" id="mkt_other_wrap" style="display:none"><label>Other Market(s)<input name="market_other"></label></div>
+        <div class="form-grid two">
+          <div class="field"><label>Existing IND/CTA<select name="ind_cta"><option>No</option><option>Yes</option><option>In progress</option></select></label></div>
+          <div class="field"><label>Need Regulatory Filing Support?<select name="need_reg_support"><option>Yes (via IRSG)</option><option>No</option></select></label></div>
+        </div>
+        <div class="field"><label>Quality Standards Required</label>
+          <div class="pill-group">
+            <label class="pill"><input type="checkbox" name="quality[]" value="Non‑GMP R&D" checked><span>Non‑GMP R&D</span></label>
+            <label class="pill"><input type="checkbox" name="quality[]" value="GLP"><span>GLP</span></label>
+            <label class="pill"><input type="checkbox" name="quality[]" value="GMP Clinical (Partnered)"><span>GMP Clinical (Partnered)</span></label>
+            <label class="pill"><input type="checkbox" name="quality[]" value="GMP Commercial (Partnered)"><span>GMP Commercial (Partnered)</span></label>
+            <label class="pill"><input type="checkbox" id="qual_other_chk" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="field" id="qual_other_wrap" style="display:none"><label>Other Quality Standard<input name="quality_other"></label></div>
+      </fieldset>
+
+      <!-- Section 5: Timeline & Budget -->
+      <fieldset>
+        <legend>Section 5: Timeline & Budget</legend>
+        <div class="form-grid two">
+          <div class="field"><label>Desired Start Date<input type="date" name="start_date"></label></div>
+          <div class="field"><label>Desired Completion Date<input type="date" name="end_date"></label></div>
+        </div>
+        <div class="form-grid two">
+          <div class="field"><label>Budget Range (USD)<select name="budget"><option>Undisclosed</option><option><$100,000</option><option>$100,000 – $250,000</option><option>$250,000 – $500,000</option><option>$500,000 – $1,000,000</option><option>$1,000,000+</option></select></label></div>
+          <div class="field"><label>Open to Phased Milestones?<select name="phased"><option>Yes</option><option>No</option></select></label></div>
+        </div>
+      </fieldset>
+
+      <!-- Section 6: Confidentiality & IP -->
+      <fieldset>
+        <legend>Section 6: Confidentiality & IP</legend>
+        <div class="form-grid two">
+          <div class="field"><label>CDA/NDA in Place?<select name="nda"><option>No</option><option>Yes</option><option>Need one</option></select></label></div>
+          <div class="field"><label>IP Ownership<select name="ip_status"><option>Owned by Client</option><option>Shared / Joint</option><option>Licensed from Third Party</option><option>Other (specify below)</option></select></label></div>
+        </div>
+        <div class="field"><label>IP — Other<input name="ip_other"></label></div>
+      </fieldset>
+
+      <!-- Section 7: File Uploads (Optional) -->
+      <fieldset>
+        <legend>Section 7: File Uploads (Optional)</legend>
+        <div class="form-grid two">
+          <div class="field"><label>Project Brief / Deck<input type="file" name="deck"></label></div>
+          <div class="field"><label>Regulatory Docs (IND, CTA, IMPD)<input type="file" name="reg_docs"></label></div>
+        </div>
+      </fieldset>
+
+      <!-- Section 8: Additional Notes -->
+      <fieldset>
+        <legend>Section 8: Additional Notes</legend>
+        <div class="field"><textarea name="notes" rows="3" placeholder="Other information we should know"></textarea></div>
+      </fieldset>
+
+      <!-- Section 9: Agreement & Submission -->
+      <fieldset>
+        <legend>Section 9: Agreement & Submission</legend>
+        <div class="field"><label><input type="checkbox" name="confirm_accuracy" required> I confirm the information provided is accurate to the best of my knowledge.</label></div>
+        <div class="field"><label><input type="checkbox" name="agree_contact" required> I agree to be contacted by tBrexa Bio.</label></div>
+        <input type="hidden" name="_subject" value="New tBrexa Intake">
+        <button class="btn" type="submit">Submit Intake</button>
+
+    <p style="font-size:0.9rem; margin-top:8px;">We’ll follow up within 1–2 business days. If you don’t hear from us, email <a href="mailto:<a href="mailto:info@tbrexa.com">info@tbrexa.com</a>">info@tbrexa.com</a>.</p>
+    
+        <p class="note">Submissions notify our BD team at <a href="mailto:info@tbrexa.com">info@tbrexa.com</a>. For CRM integration, connect this page to your WordPress form plugin or Zapier/HubSpot.</p>
+      </fieldset>
+
+    
+    <div style="display:none;">
+      <label>Leave this field empty</label>
+      <input type="text" name="company_site_url" tabindex="-1" autocomplete="off">
+    </div>
+    
+</form>
+
+    <p class="note">Need help? Email <a href="mailto:<a href="mailto:info@tbrexa.com">info@tbrexa.com</a>">info@tbrexa.com</a> or return to the <a href="/">homepage</a>.</p>
+
+    <script>
+      function bindToggle(chkId, wrapId){
+        var c=document.getElementById(chkId); var w=document.getElementById(wrapId); if(!c||!w) return; 
+        function t(){ w.style.display = c && c.checked ? 'block' : 'none'; }
+        c.addEventListener('change', t); t();
+      }
+      bindToggle('req_other_chk','req_other_wrap');
+      bindToggle('mol_other_chk','mol_other_wrap');
+      bindToggle('mkt_other_chk','mkt_other_wrap');
+      bindToggle('qual_other_chk','qual_other_wrap');
+    </script>
+  </div>
+</body>
+</html>

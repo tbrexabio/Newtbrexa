@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>tBrexa Bio Services</title>
+<title>tBrexa Bio | Early‑Stage Biologics (Non‑GMP) • Hybrid CDMO</title>
 <style>
+  /* Brand palette: blue, orange, green */
   :root{
-    --secondary:#DC4C18;
-    --accent:#10B981;
-    --blue:#0844A4;
+    --blue:#0844A4;     /* primary */
+    --orange:#DC4C18;   /* primary */
+    --green:#10B981;    /* primary */
     --text:#0f172a;
     --muted:#475569;
     --bg:#ffffff;
@@ -31,124 +32,188 @@
     .grid-3{grid-template-columns:repeat(3,1fr)}
   }
   .section{padding:72px 0}
-  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--accent);font-size:12px;margin-bottom:8px}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--green);font-size:12px;margin-bottom:8px}
   .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
   .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid currentColor;border-radius:999px;padding:6px 10px;font-size:12px}
-  .chip--accent{color:var(--accent)}
-  .chip--secondary{color:var(--secondary)}
+  .chip--green{color:var(--green)}
+  .chip--orange{color:var(--orange)}
   .chip--blue{color:var(--blue)}
   .btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:12px 18px;font-weight:600}
-  .btn--solid{color:#fff;background:linear-gradient(90deg,var(--accent),var(--secondary))}
-  .btn--outline{color:var(--secondary);border:1.5px solid var(--secondary);background:transparent}
+  .btn--solid{color:#fff;background:linear-gradient(90deg,var(--blue),var(--orange),var(--green))}
+  .btn--outline{color:var(--orange);border:1.5px solid var(--orange);background:transparent}
   .btn:hover{filter:saturate(1.05) brightness(1.02)}
   .btn:active{transform:translateY(1px)}
   .hero{position:relative;padding:88px 0 56px;
-    background: radial-gradient(1200px 600px at 10% -10%, rgba(16,185,129,.09), transparent 60%),
-               radial-gradient(900px 500px at 90% 20%, rgba(220,76,24,.10), transparent 55%), #ffffff;}
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(16,185,129,.12), transparent 60%),
+      radial-gradient(900px 500px at 90% 20%, rgba(8,68,164,.12), transparent 55%),
+      radial-gradient(900px 500px at 50% 110%, rgba(220,76,24,.10), transparent 55%), #ffffff;}
   .hero-img{width:100%;height:100%;min-height:280px;object-fit:cover;border-radius:16px;
-            box-shadow:0 10px 30px rgba(8,68,164,.18);}
+            box-shadow:0 10px 30px rgba(8,68,164,.18);} 
   .iconchip{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#fff;
-            background:linear-gradient(135deg,var(--blue),var(--secondary))}
+            background:linear-gradient(135deg,var(--blue),var(--orange))}
   .list{padding-left:18px;margin:10px 0;color:var(--text)}
   .list li{margin:6px 0;color:var(--muted)}
   .soft{background:var(--bg-soft)}
   .footer{border-top:1px solid #e5e7eb;padding:36px 0;color:#6b7280;font-size:14px}
   nav a{margin-left:18px}
+  .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:0 6px}
 </style>
 </head>
 <body>
 
+    <div style="position:relative; z-index:1; display:flex; justify-content:center; margin: 16px 0;">
+      <a href="intake.html" style="text-decoration:none; border:1px solid #222; padding:12px 18px; border-radius:10px; font-weight:600;">
+        Open Project Intake Form →
+      </a>
+    </div>
+    
+
+<!-- Top Bar (WP: paste in Header Template or use "Custom HTML" block) -->
 <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:64px;">
   <div style="display:flex;align-items:center;gap:10px;">
     <img src="tbrexa_logo.png" alt="tBrexa Bio logo" style="height:36px;width:auto;object-fit:contain;display:block" />
     <strong style="margin-left:6px;">tBrexa Bio</strong>
   </div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="#manufacturing">Manufacturing</a>
-    <a href="#data">Data Platform</a>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#partnerships">Partnerships</a>
+    <a href="#community">Community</a>
     <a href="#reg">Regulatory</a>
-    <a href="#ai">AI</a>
-    <a href="pricing.html">Pricing</a>
+    <a href="#ai">AI & Data</a>
+    <a href="/pricing/">Pricing</a>
     <a href="#contact">Contact</a>
-  </nav>
+    <a href="intake.html">Project Intake</a>
+</nav>
 </div>
 
-<header class="hero">
+<!-- Hero -->
+<header id="home" class="hero">
   <div class="container grid grid-2">
     <div>
-      <div class="eyebrow">U.S. Based Woman & Minority Owned CDMO</div>
-      <h1>From Molecule to Market Powered by Science Data and Agility</h1>
-      <p>tBrexa delivers end to end support across biologics cell and gene therapies and next gen antibodies. We unite cutting edge manufacturing with scientific data platforms regulatory expertise and AI driven process analytics.</p>
+      <div class="eyebrow">U.S.-Based Woman & Minority‑Owned CDMO</div>
+      <h1 style="color:var(--blue)">Agile Early‑Stage Biologics Development</h1>
+      <p>tBrexa Bio operates under a <strong>hybrid, agile model</strong> focused on non‑GMP R&D: process development, cell line optimization, and analytical method development for monoclonal, bispecific, and trispecific antibodies and other large‑molecule therapeutics. We combine in‑house expertise with strategic partners to scale as needed while aligning to regulatory expectations.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px;">
-        <span class="chip chip--accent">Part 11 ready</span>
-        <span class="chip chip--secondary">GMP Mindset</span>
-        <span class="chip chip--blue">AI First Analytics</span>
+        <span class="chip chip--green">Non‑GMP R&D</span>
+        <span class="chip chip--orange">GMP‑aligned practices</span>
+        <span class="chip chip--blue">AI‑enabled analytics</span>
       </div>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
         <a class="btn btn--solid" href="#contact">Start Your Project →</a>
-        <a class="btn btn--outline" href="#data">Explore Services</a>
+        <a class="btn btn--outline" href="#services">View Services</a>
       </div>
     </div>
 
     <div class="card" style="padding:0;">
-      <img class="hero-img" src="vials.jpg" alt="Scientist holding several sterile vials in gloved hands">
+      <!-- Replace src with your Media Library URL after upload -->
+      <img class="hero-img" src="equipment.jpg" alt="Non‑GMP R&D laboratory with scientists and instruments">
     </div>
   </div>
 </header>
 
-<section id="manufacturing" class="section">
+<!-- Services -->
+<section id="services" class="section">
   <div class="container">
-    <div class="eyebrow">Core Services</div>
-    <h2>Biologics and Advanced Therapeutics Manufacturing</h2>
+    <div class="eyebrow">Core Services (In‑House)</div>
+    <h2 style="color:var(--orange)">Early‑Stage Capabilities — Non‑GMP</h2>
+
     <div class="grid grid-3" style="margin-top:18px;">
       <div class="card">
         <div class="iconchip">🧪</div>
-        <h3 style="margin-top:10px;">Antibodies mAb bsAb tsAb</h3>
-        <p>Single use bioreactors process development through DP fill method validation and release testing.</p>
+        <h3 style="margin-top:10px;color:var(--blue)">Process Development</h3>
+        <p>Upstream and downstream non‑GMP development with DoE, scale‑down models, and comparability planning for antibody programs (mAb, bsAb, tsAb) and other large molecules.</p>
       </div>
       <div class="card">
         <div class="iconchip">🧬</div>
-        <h3 style="margin-top:10px;">Gene Therapies AAV Lenti</h3>
-        <p>Vector design support upstream and downstream development and QC potency and identity frameworks.</p>
+        <h3 style="margin-top:10px;color:var(--blue)">Cell Line Optimization</h3>
+        <p>Cell line screening and optimization for titer, quality, and stability; media/feed strategy; early scale‑up guidance.</p>
       </div>
       <div class="card">
         <div class="iconchip">🧫</div>
-        <h3 style="margin-top:10px;">Cell Therapies</h3>
-        <p>Modular cleanrooms closed processing concepts and analytics for rapid tech transfer.</p>
+        <h3 style="margin-top:10px;color:var(--blue)">Analytical Method Development</h3>
+        <p>Immunoassays (e.g., ELISA), molecular assays (qPCR/ddPCR), and bioanalytical methods for identity, purity, binding, and potency to support characterization and comparability.</p>
       </div>
     </div>
 
     <div class="grid grid-3" style="margin-top:18px;">
       <div class="card">
-        <h3>Tech Transfer and Scale Up</h3>
-        <p>Transfer packages comparability protocols and validation plans anchored in risk based CMC.</p>
+        <h3>Tech Transfer Readiness</h3>
+        <p>Data packages, draft control strategies, and transfer plans that de‑risk future GMP transitions with our partner network.</p>
       </div>
       <div class="card">
-        <h3>GMP and Data Integrity</h3>
-        <p>ALCOA plus by design audit trails and change control embedded in every workflow.</p>
+        <h3>Quality Practices</h3>
+        <p>Documented SOPs, data integrity (ALCOA+), and traceability in a controlled lab environment to align with regulatory expectations.</p>
       </div>
       <div class="card">
-        <h3>DS and DP Manufacturing</h3>
-        <p>End to end execution with documentation aligned to regulatory submissions and inspections.</p>
+        <h3>Project Management</h3>
+        <p>Clear milestones, regular updates, and transparent dashboards for scope, timelines, and deliverables.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="data" class="section soft">
+<!-- Partnerships -->
+<section id="partnerships" class="section soft">
   <div class="container">
-    <div class="eyebrow">Data Platform</div>
-    <h2>Scientific Data Infrastructure as a Service</h2>
+    <div class="eyebrow">Extended Network</div>
+    <h2 style="color:var(--green)">Strategic Partnerships for Continuity</h2>
+    <p>Our <strong>hybrid model</strong> blends tBrexa’s in‑house R&D with a vetted network of partners to carry programs beyond our current scope. This lets clients move from research to clinical stages without losing speed or context.</p>
+    <div class="grid grid-3" style="margin-top:18px;">
+      <div class="card">
+        <h3>GMP Manufacturing (Partnered)</h3>
+        <p>Access trusted CDMOs for DS/DP manufacturing and clinical supply. We coordinate knowledge transfer to protect your timelines and right‑first‑time outcomes.</p>
+      </div>
+      <div class="card">
+        <h3>Specialized Analytics</h3>
+        <p>Tap external cores and CROs for advanced characterization when needed (e.g., orthogonal methods, high‑resolution analytics).</p>
+      </div>
+      <div class="card">
+        <h3>Academic & Incubator Links</h3>
+        <p>University cores and innovation hubs extend capacity and accelerate feasibility work without heavy fixed overhead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Regulatory (IRSG) -->
+<section id="reg" class="section">
+  <div class="container">
+    <div class="eyebrow">Regulatory</div>
+    <h2>In Collaboration with <a href="https://www.regsci.com" target="_blank" rel="noopener">IRSG</a></h2>
+    <p>Through <a href="https://www.regsci.com" target="_blank" rel="noopener"><strong>Innovative Regulatory Science Group (IRSG)</strong></a>, our sister firm, we align development activities with evolving global regulatory expectations — reducing risk and rework later.</p>
+    <div class="grid grid-3" style="margin-top:18px;">
+      <div class="card">
+        <h3>Strategy & Interactions</h3>
+        <p>Regulatory roadmaps, meeting prep, briefing packages, and responses that reflect process reality and data readiness.</p>
+      </div>
+      <div class="card">
+        <h3>CMC Alignment</h3>
+        <p>Authoring and review of CMC sections, phase‑appropriate controls, and realistic commitments that enable efficient scale‑up.</p>
+      </div>
+      <div class="card">
+        <h3>Compliance by Design</h3>
+        <p>Part 11 considerations, change control and CAPA frameworks, and inspection preparedness woven into operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI & Data Platform -->
+<section id="ai" class="section soft">
+  <div class="container">
+    <div class="eyebrow">AI & Data</div>
+    <h2>Scientific Data Infrastructure & Analytics</h2>
     <div class="grid grid-2" style="margin-top:18px;">
       <div class="card">
         <h3>What You Get</h3>
         <ul class="list">
-          <li>Extensible data models tabular and JSON tailored to your assays and instruments</li>
-          <li>ELN and LIMS integrations and proprietary instrument parsers</li>
-          <li>Dashboards QC control charts batch genealogy DoE explorer</li>
-          <li>AI ready datasets with lineage versioning and validation packs</li>
-          <li>Part 11 ready audit trails and access controls</li>
+          <li>Extensible data models for assays/instruments (tabular + JSON)</li>
+          <li>ELN/LIMS integrations and instrument data parsers</li>
+          <li>Dashboards: QC control charts, batch genealogy, DoE explorer</li>
+          <li>AI‑ready datasets with lineage, versioning, and validation packs</li>
+          <li>Part 11‑aware audit trails and role‑based access</li>
         </ul>
       </div>
       <div class="card">
@@ -163,80 +228,66 @@
   </div>
 </section>
 
-<section id="reg" class="section">
+<!-- Community Impact (ICAA) -->
+<section id="community" class="section">
   <div class="container">
-    <div class="eyebrow">Regulatory</div>
-    <h2>Innovative Regulatory Science Group IRSG</h2>
+    <div class="eyebrow">Community Impact</div>
+    <h2>Inner City Academic Achievers (<a href="https://www.icaaboston.org" target="_blank" rel="noopener">ICAA</a>)</h2>
+    <p>As a woman‑ and minority‑owned company, we invest in the next generation of scientists. Our partnership with <a href="https://www.icaaboston.org" target="_blank" rel="noopener"><strong>Inner City Academic Achievers</strong></a> provides STEM apprenticeships, mentoring, and hands‑on learning for students from underrepresented communities — building a stronger, more inclusive life‑sciences workforce.</p>
     <div class="grid grid-3" style="margin-top:18px;">
-      <div class="card">
-        <h3>Strategy and Submissions</h3>
-        <p>IND and CTA roadmaps accelerated pathways rare disease expertise and agency interactions.</p>
-      </div>
-      <div class="card">
-        <h3>CMC and Part 11</h3>
-        <p>Authoring review and audit readiness with validation artifacts synchronized to data systems.</p>
-      </div>
-      <div class="card">
-        <h3>Compliance by Design</h3>
-        <p>Change control CAPA alignment and inspection preparedness integrated into operations.</p>
-      </div>
+      <div class="card"><h3>STEM Apprenticeships</h3><p>Lab exposure to early‑stage biologics workflows and analytical methods.</p></div>
+      <div class="card"><h3>Mentorship</h3><p>Career pathways in biotech, regulatory affairs, and entrepreneurship.</p></div>
+      <div class="card"><h3>Workforce Pipeline</h3><p>Real‑world skills that feed regional life‑sciences talent needs.</p></div>
     </div>
   </div>
 </section>
 
-<section id="ai" class="section soft">
-  <div class="container">
-    <div class="eyebrow">AI and Analytics</div>
-    <h2>Smarter Manufacturing Through AI</h2>
-    <div class="grid grid-3" style="margin-top:18px;">
-      <div class="card">
-        <h3>Predictive Yield and Golden Batch</h3>
-        <p>ML and hybrid approaches for early deviation detection and yield optimization.</p>
-      </div>
-      <div class="card">
-        <h3>Process Intelligence</h3>
-        <p>Soft sensors for CQAs trend analysis and explainable models to support decisions.</p>
-      </div>
-      <div class="card">
-        <h3>MLOps and Validation</h3>
-        <p>Model tracking feature stores and validation aligned with GxP expectations.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- Contact -->
 <section id="contact" class="section">
   <div class="container grid grid-2">
     <div>
       <div class="eyebrow">Next Step</div>
-      <h2>Your Science Our Infrastructure</h2>
-      <p>Schedule a consultation. We will align on assays instruments regulatory milestones and deployment model custom build managed service or hybrid.</p>
-      <p><strong>Email:</strong> <a href="mailto:info@tbrexa.com">info@tbrexa.com</a></p>
+      <h2>Your Science. Our Acceleration.</h2>
+      <p>
+        Questions? Email <a href="mailto:<a href="mailto:info@tbrexa.com">info@tbrexa.com</a>">info@tbrexa.com</a>.<br>
+        Prefer a guided intake? If you’d like our Business Development team to reach out, please complete our
+        <a href="/intake/">Project Intake Form</a>.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn btn--solid" href="/intake/">Open Intake Form →</a>
+        <a class="btn btn--outline" href="#services">View Services</a>
+      </div>
     </div>
 
-    <!-- Contact form: Formspree placeholder -->
-    <form class="card" action="https://formspree.io/f/XYZ" method="POST">
-      <h3>Tell us about your program</h3>
-      <label>Name<br><input name="name" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px" placeholder="Full name" required></label><br><br>
-      <label>Work Email<br><input type="email" name="email" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px" placeholder="name@company.com" required></label><br><br>
-      <label>How can we help<br><textarea name="message" rows="5" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px" placeholder="Molecule platform or data needs" required></textarea></label><br>
-      <input type="hidden" name="_subject" value="New inquiry from tBrexa website">
-      <button class="btn btn--solid" type="submit">Send Inquiry</button>
-      <p style="font-size:12px;color:#6b7280;margin-top:8px;">No account needed. We use an external form service. You can change to AWS later.</p>
-    </form>
+    <div class="card">
+      <h3>What to Expect</h3>
+      <p>After you submit the intake, our BD team reviews within 1–2 business days and routes to the right expert. We’ll propose a phased plan for non‑GMP R&D and outline GMP partner pathways if needed.</p>
+      <ul class="list">
+        <li>Keep files under 25MB each, or share a link to a data room.</li>
+        <li>We can execute a CDA/NDA before deep dives.</li>
+        <li>For urgent requests, note your deadline in the form.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="footer">
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
     <div style="display:flex;align-items:center;gap:10px;">
       <img src="tbrexa_logo.png" alt="tBrexa Bio logo" style="height:28px;width:auto;object-fit:contain;display:block" />
-      <span>tBrexa Bio bridging breakthrough science and patient access.</span>
+      <span>tBrexa Bio — bridging breakthrough science and patient access.</span>
     </div>
     <div>© <span id="yr"></span> tBrexa Bio. All rights reserved.</div>
   </div>
 </footer>
 
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-</body>
+
+        <footer style="padding:16px; text-align:center;">
+          <p>Questions? Email <a href="mailto:info@tbrexa.com">info@tbrexa.com</a></p>
+          <p><strong>Want our Business Development team to reach out?</strong> Complete our <a href="intake.html">Project Intake Form</a> and we’ll follow up within 1–2 business days.</p>
+        </footer>
+        </body>
+        
 </html>
